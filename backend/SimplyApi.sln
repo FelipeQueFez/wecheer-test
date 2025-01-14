@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalLambda", "MinimalLambda\src\MinimalLambda\MinimalLambda.csproj", "{6958D01E-04E4-462D-BABB-46DDF23E174E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{435DB8DD-7270-4211-9B7D-2F5B2343AC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435DB8DD-7270-4211-9B7D-2F5B2343AC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435DB8DD-7270-4211-9B7D-2F5B2343AC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435DB8DD-7270-4211-9B7D-2F5B2343AC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6958D01E-04E4-462D-BABB-46DDF23E174E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6958D01E-04E4-462D-BABB-46DDF23E174E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6958D01E-04E4-462D-BABB-46DDF23E174E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6958D01E-04E4-462D-BABB-46DDF23E174E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0B228A-13C9-4FCB-BF2B-916095CF6A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0B228A-13C9-4FCB-BF2B-916095CF6A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0B228A-13C9-4FCB-BF2B-916095CF6A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0B228A-13C9-4FCB-BF2B-916095CF6A46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
