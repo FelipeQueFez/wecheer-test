@@ -1,0 +1,42 @@
+img {
+    width: 150;
+    height: 150;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.w-timer {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.w-error {
+    color: red;
+    font-weight: bold;
+}
+
+.w-container {
+    width: 450px;
+    max-width: 450px;
+    word-wrap: break-word;
+}
+
+.w-card {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+}
+
+.w-card-content {
+    justify-content: center;
+}
+
+p.label {
+    font-weight: bold;
+}
+
+p.value {
+    color: aqua;
+}

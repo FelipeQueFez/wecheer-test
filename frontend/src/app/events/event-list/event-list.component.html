@@ -1,0 +1,26 @@
+<div *ngIf="error" class="w-error">
+    {{ error }}
+</div>
+
+<div class="w-timer">
+    <p>Refreshing in {{ countdown }} seconds...</p>
+</div>
+
+<div *ngIf="events.length > 0; else noEvents" class="w-container">
+    <mat-card appearance="outlined" *ngFor="let event of events" class="w-card">
+        <mat-card-content>
+            <div class="w-card-content">
+                <img src="{{event.imageUrl}}" width="150" height="150" alt="">
+                <p class="label">Description:</p>
+                <p class="value">{{ event.description }}</p>
+
+                <p class="label">Date:</p>
+                <p class="value">{{ event.dateTime | date:'MMM d, y, h:mm:ss a' }}</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<ng-template #noEvents>
+    <p>No events available.</p>
+</ng-template>
