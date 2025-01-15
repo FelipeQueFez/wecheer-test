@@ -12,6 +12,7 @@ This repository contains the codebase for the WeCheer Test project, encompassing
    - [Installation](#backend-installation)
    - [Usage](#backend-usage)
    - [Deployment](#backend-deployment)
+   - [Ideas](#ideas)
 - [Frontend](#frontend)
    - [Concepts](#frontend-concepts)
    - [Frontend Technical Debt](#frontend-technical-debt)
@@ -22,28 +23,15 @@ This repository contains the codebase for the WeCheer Test project, encompassing
 
 ## Project Overview
 
-Informations for the test is [here](./Fullstack%20Developer%20Exercise.pdf)
+Informations for the test is [here](./assets/Fullstack%20Developer%20Exercise.pdf)
 
 # Backend
+
+Access for [Swagger documentation](https://bxd49qhwtj.execute-api.eu-north-1.amazonaws.com/index.html)
 
 ## Backend Concepts
 - dotnet version: 8.0.404
 - [CORS](https://aws.amazon.com/what-is/cross-origin-resource-sharing/)
-
-## Ideas
-
-### Proof of concept related a websocket
-- [API Gateway WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html)
-- [Implementing WebSocket Client and Server on ASP.NET Core 6.0 (C#)](https://medium.com/bina-nusantara-it-division/implementing-websocket-client-and-server-on-asp-net-core-6-0-c-4fbda11dbceb)
-- [Building Real-Time Notifications in .NET Core 8 Minimal APIs using SignalR](https://medium.com/@umairg404/building-real-time-notifications-in-net-core-8-minimal-apis-using-signalr-c2eb9edfb68c)
-
-### Try use [Firebase Firestore](https://firebase.google.com/docs/firestore)
-- [Configuration in dotnet](https://pieterdlinde.medium.com/netcore-and-cloud-firestore-94628943eb3c)
-- [Configuration in angular](https://medium.com/@hsingh_82678/integrating-firebase-with-your-angular-app-a-step-by-step-guide-b8e0006fc3a7)
-
-### Validation
-- For complex validations might is a good idea use [FluentValidation](https://docs.fluentvalidation.net/en/latest/).
-
 
 ## Backend Installation
 
@@ -72,6 +60,23 @@ To run the backend application:
    ```
 3. The backend API will be accessible at `http://localhost:5000` (adjust the port if necessary).
 
+### Examples
+
+Post new event
+```bash
+curl --location 'http://localhost:5000/Events/add' \
+--header 'Content-Type: application/json' \
+--data '{
+  "imageUrl": "https://adventurecontinues.org/wp-content/uploads/2017/05/url_istock_nicozorn_thumb800.jpg",
+  "description": "Hello world"
+}'
+```
+
+Get al events
+```bash
+curl --location 'http://localhost:5000/Events/all'
+```
+
 ## Backend Deployment
 
 To deploy the backend using AWS Lambda:
@@ -82,10 +87,24 @@ To deploy the backend using AWS Lambda:
    dotnet lambda deploy-function wecheerAPI
    ```
 
-## CloudFormation
+### CloudFormation
 ```bash
 aws cloudformation deploy --template-file serverless.template --stack-name wecheerAPIStack --capabilities CAPABILITY_NAMED_IAM
 ```
+
+## Ideas
+
+### Proof of concept related a websocket
+- [API Gateway WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html)
+- [Implementing WebSocket Client and Server on ASP.NET Core 6.0 (C#)](https://medium.com/bina-nusantara-it-division/implementing-websocket-client-and-server-on-asp-net-core-6-0-c-4fbda11dbceb)
+- [Building Real-Time Notifications in .NET Core 8 Minimal APIs using SignalR](https://medium.com/@umairg404/building-real-time-notifications-in-net-core-8-minimal-apis-using-signalr-c2eb9edfb68c)
+
+### Try use [Firebase Firestore](https://firebase.google.com/docs/firestore)
+- [Configuration in dotnet](https://pieterdlinde.medium.com/netcore-and-cloud-firestore-94628943eb3c)
+- [Configuration in angular](https://medium.com/@hsingh_82678/integrating-firebase-with-your-angular-app-a-step-by-step-guide-b8e0006fc3a7)
+
+### Validation
+- For complex validations might is a good idea use [FluentValidation](https://docs.fluentvalidation.net/en/latest/).
 
 # Frontend
 
