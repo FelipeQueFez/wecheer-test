@@ -133,7 +133,7 @@ To run the frontend application:
 
 1. Start the development server:
    ```bash
-   npm start
+   npm run start
    ```
 2. Open your browser and navigate to `http://localhost:4200` to view the application.
 
