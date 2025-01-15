@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { EventItemModel } from '../../../data/models/event-item-model';
 
 @Component({
   selector: 'app-right-side',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './app-right-side.component.scss'
 })
 export class AppRightSideComponent {
-
+  @Input() events: EventItemModel[] = [];
 }
