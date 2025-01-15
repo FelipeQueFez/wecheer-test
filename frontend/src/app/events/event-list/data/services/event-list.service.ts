@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { EventItemModel } from './event-item-model';
+import { EventItemModel } from '../models/event-item-model';
 
 @Injectable({
   providedIn: 'root'

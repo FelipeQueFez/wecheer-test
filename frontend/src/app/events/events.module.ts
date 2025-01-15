@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventListComponent } from './event-list/event-list.component';
-import { EventListService } from './event-list/event-list.service';
+import { EventListComponent } from './event-list/presentation/event-list.component';
+import { EventListService } from './event-list/data/services/event-list.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 

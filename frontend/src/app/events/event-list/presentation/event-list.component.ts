@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, interval, switchMap } from 'rxjs';
-import { EventListService } from './event-list.service';
-import { EventItemModel } from './event-item-model';
+import { EventListService } from '../data/services/event-list.service';
+import { EventItemModel } from '../data/models/event-item-model';
 
 @Component({
-  selector: 'app-event-list',
+  selector: 'event-list',
   standalone: false,
 
   templateUrl: './event-list.component.html',
