@@ -6,6 +6,7 @@
 - Test
 - Environments
 - [Bounded Concept](https://martinfowler.com/bliki/BoundedContext.html)
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 # Technical Debt
 - Configure some [CI/CD Tool](https://www.redhat.com/en/topics/devops/what-is-ci-cd), for example [Github Action](https://github.com/features/actions)
