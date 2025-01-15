@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using MinimalLambda.Filters;
-using MinimalLambda.Models;
-using MinimalLambda.Services;
+using wecheerAPI.Filters;
+using wecheerAPI.Models;
+using wecheerAPI.Services;
 
-namespace MinimalLambda.Controllers;
+namespace wecheerAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -1,6 +1,6 @@
-using MinimalLambda.Models;
+using wecheerAPI.Models;
 
-namespace MinimalLambda.Services;
+namespace wecheerAPI.Services;
 
 public interface IEventService
 {

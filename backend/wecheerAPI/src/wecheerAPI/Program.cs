@@ -1,5 +1,5 @@
-using MinimalLambda.Filters;
-using MinimalLambda.Services;
+using wecheerAPI.Filters;
+using wecheerAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace MinimalLambda.Filters;
+namespace wecheerAPI.Filters;
 
 public class ValidateModelAttribute : ActionFilterAttribute
 {

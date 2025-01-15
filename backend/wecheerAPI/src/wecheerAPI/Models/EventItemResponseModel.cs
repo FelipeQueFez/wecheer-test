@@ -1,4 +1,4 @@
-namespace MinimalLambda.Models;
+namespace wecheerAPI.Models;
 
 /// <summary>
 /// Item of represent a event

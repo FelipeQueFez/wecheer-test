@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace MinimalLambda.Filters;
+namespace wecheerAPI.Filters;
 
 public class GlobalExceptionFilter : IExceptionFilter
 {

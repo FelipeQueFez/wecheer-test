@@ -17,7 +17,7 @@
 
 # Deploy
 
-`dotnet lambda deploy-function MinimalLambda`
+`dotnet lambda deploy-function wecheerAPI`
 
 # References
 - [Lambda proxy integrations in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html)
@@ -70,6 +70,6 @@ If already installed check if new version is available.
 
 Deploy application
 ```
-    cd "MinimalLambda/src/MinimalLambda"
+    cd "wecheerAPI/src/wecheerAPI"
     dotnet lambda deploy-serverless
 ```
