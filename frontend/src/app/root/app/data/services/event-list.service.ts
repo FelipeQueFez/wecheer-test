@@ -12,8 +12,10 @@ export class EventListService {
 
   getAll(): Observable<EventItemModel[]> {
     //TODO:review - use environment
-    //https://bxd49qhwtj.execute-api.eu-north-1.amazonaws.com
-    var url = 'http://localhost:5000';
+    //var url = 'https://bxd49qhwtj.execute-api.eu-north-1.amazonaws.com';
+    //var url = 'http://localhost:5000';
+    var url = 'https://bxd49qhwtj.execute-api.eu-north-1.amazonaws.com';
+
     return this.http.get<EventItemModel[]>(`${url}/Events/all`)
       .pipe(
         catchError((error) => {
