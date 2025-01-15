@@ -82,6 +82,11 @@ To deploy the backend using AWS Lambda:
    dotnet lambda deploy-function wecheerAPI
    ```
 
+## CloudFormation
+```bash
+aws cloudformation deploy --template-file serverless.template --stack-name wecheerAPIStack --capabilities CAPABILITY_NAMED_IAM
+```
+
 # Frontend
 
 ## Frontend Concepts

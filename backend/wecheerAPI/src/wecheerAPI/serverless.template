@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Serverless deployment for the wecheerAPI .NET Lambda
+
+Resources:
+  # Lambda Function
+  WecheerAPILambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: wecheerAPI
+      Handler: wecheerAPI::wecheerAPI.LambdaEntryPoint::FunctionHandlerAsync
+      Runtime: dotnet8
+      Role: !GetAtt LambdaExecutionRole.Arn
+      MemorySize: 256
+      Timeout: 30
+
+  # API Gateway
+  WecheerAPI:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: WecheerAPI
+      Description: API Gateway for wecheerAPI Lambda
+
+  WecheerAPIResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt WecheerAPI.RootResourceId
+      PathPart: v1
+      RestApiId: !Ref WecheerAPI
+
+  WecheerAPIMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref WecheerAPI
+      ResourceId: !Ref WecheerAPIResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${WecheerAPILambdaFunction.Arn}/invocations"
+
+  # Permissions for API Gateway to Invoke Lambda
+  ApiGatewayInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref WecheerAPILambdaFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${WecheerAPI}/*/POST/v1"
+
+  # Lambda Execution Role
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: wecheerAPIExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: wecheerAPIPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: "arn:aws:logs:*:*:*"
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                  - lambda:InvokeAsync
+                Resource: "*"
+
+Outputs:
+  ApiUrl:
+    Description: URL of the API Gateway endpoint
+    Value: !Sub "https://${WecheerAPI}.execute-api.${AWS::Region}.amazonaws.com/v1"
