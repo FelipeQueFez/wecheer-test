@@ -23,11 +23,11 @@ This repository contains the codebase for the WeCheer Test project, encompassing
 
 ## Project Overview
 
-Informations for the test is [here](./assets/Fullstack%20Developer%20Exercise.pdf)
+- Informations for the test is [here](./assets/Fullstack%20Developer%20Exercise.pdf)
+- For access the project running is [here](https://wecheer-a2bd8.web.app/)
+- Access for [Swagger documentation](https://bxd49qhwtj.execute-api.eu-north-1.amazonaws.com/index.html)
 
 # Backend
-
-Access for [Swagger documentation](https://bxd49qhwtj.execute-api.eu-north-1.amazonaws.com/index.html)
 
 ## Backend Concepts
 - dotnet version: 8.0.404
