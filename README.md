@@ -6,62 +6,23 @@ This repository contains the codebase for the WeCheer Test project, encompassing
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Frontend](#frontend)
-   - [Concepts](#frontend-concepts)
-   - [Frontend Technical Debt](#frontend-technical-debt)
-   - [Installation](#frontend-installation)
-   - [Usage](#frontend-usage)
 - [Backend](#backend)
    - [Concepts](#backend-concepts)
    - [Backend Technical Debt](#frontend-technical-debt)
    - [Installation](#backend-installation)
    - [Usage](#backend-usage)
    - [Deployment](#backend-deployment)
+- [Frontend](#frontend)
+   - [Concepts](#frontend-concepts)
+   - [Frontend Technical Debt](#frontend-technical-debt)
+   - [Installation](#frontend-installation)
+   - [Usage](#frontend-usage)
+- [Technical Debt](#technical-debt)
 - [References](#references)
 
 ## Project Overview
 
 Informations for the test is [here](./Fullstack%20Developer%20Exercise.pdf)
-
-# Frontend
-
-## Frontend Concepts
-- Node version: v20.11.0
-- Angular version: 19
-- Docker
-    - Nginx
-    - docker-compose
-- Sass
-- Test
-- Environments
-- [Bounded Concept](https://martinfowler.com/bliki/BoundedContext.html)
-- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-
-## Frontend Technical Debt
-- Configure some [CI/CD Tool](https://www.redhat.com/en/topics/devops/what-is-ci-cd), for example [Github Action](https://github.com/features/actions)
-
-## Frontend Installation
-
-To set up the frontend:
-
-1. Navigate to the `frontend` directory:
-   ```bash
-   cd frontend
-   ```
-2. Install the necessary dependencies:
-   ```bash
-   npm install
-   ```
-
-## Frontend Usage
-
-To run the frontend application:
-
-1. Start the development server:
-   ```bash
-   ng serve
-   ```
-2. Open your browser and navigate to `http://localhost:4200` to view the application.
 
 # Backend
 
@@ -121,7 +82,45 @@ To deploy the backend using AWS Lambda:
    dotnet lambda deploy-function wecheerAPI
    ```
 
-## References
+# Frontend
+
+## Frontend Concepts
+- Node version: v20.11.0
+- Angular version: 19
+- [Bounded Concept](https://martinfowler.com/bliki/BoundedContext.html)
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+## Frontend Installation
+
+To set up the frontend:
+
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Install the necessary dependencies:
+   ```bash
+   npm install
+   ```
+
+## Frontend Usage
+
+To run the frontend application:
+
+1. Start the development server:
+   ```bash
+   npm start
+   ```
+2. Open your browser and navigate to `http://localhost:4200` to view the application.
+
+# Technical Debt
+- Configure some [CI/CD Tool](https://www.redhat.com/en/topics/devops/what-is-ci-cd), for example [Github Action](https://github.com/features/actions)
+- Create a [dockerfile](https://docs.docker.com/reference/dockerfile/) for each project (frontend and backend)
+- Create a [docker-compose](https://docs.docker.com/compose/) file on the root
+- Increase coverage of unit tests
+- Work with [Environments](https://angular.dev/tools/cli/environments)
+
+# References
 
 - [CORS](https://aws.amazon.com/pt/what-is/cors/)
 - [API Gateway WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html)
